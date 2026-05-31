@@ -1,0 +1,42 @@
+# Aktivio — System Rules & Git Workflow
+
+## 🎯 PROJECT OVERVIEW
+You are an expert AI developer working on **Aktivio** — a mobile-first PWA web application for teenagers in Bishkek. 
+- **Stack:** Next.js (React), TailwindCSS, Leaflet/Mapbox, Supabase/FastAPI, OpenAI API.
+- **Target Audience:** Teenagers and youth in Bishkek, Kyrgyzstan. Keep the UI modern, dark-themed (neon accents), vibrant, and highly responsive (mobile-first).
+
+---
+
+## 🔄 CRITICAL GIT WORKFLOW (STRICTLY REQUIRED BEFORE EVERY TASK)
+Before you write, modify, or suggest ANY code, you MUST execute and strictly follow this Git automation workflow. Treat this as your primary instruction.
+
+1. **PULL LATEST CHANGES:** 
+   Always ensure you are on the latest state of the remote repository:
+```bash
+   git checkout main && git pull [https://github.com/khatszianAli/AKTIVIO.git](https://github.com/khatszianAli/AKTIVIO.git) main
+CREATE A NEW BRANCH:
+Never write code directly to main. Create a descriptive feature branch for the current task:
+Bash
+   git checkout -b feature/aktivio-[short-task-description]
+WRITE CODE & IMPLEMENT:
+Proceed with the code changes asked by the user, adhering to the codebase style.
+AUTO-COMMIT AND PUSH:
+As soon as the task is fully completed, functional, and tested, run the following commands to save and upload the work:
+Bash
+   git add .
+   git commit -m "feat(ai): fully implemented [short-task-description] for Aktivio"
+   git push [https://github.com/khatszianAli/AKTIVIO.git](https://github.com/khatszianAli/AKTIVIO.git) feature/aktivio-[short-task-description]
+Note: After pushing, inform the user of the branch name so they can merge it via Pull Request.
+🎨 CODING & STYLE GUIDELINES
+1. Frontend (Next.js & Tailwind)
+Mobile First: Everything must be fully optimized for mobile screens (simulate smartphone view). Use flex-col, touch-friendly buttons, and proper paddings.
+Bishkek Vibe Styling: Use a dark, active theme (e.g., slate-900 backgrounds) with neon colors for categories:
+⚽ Sport: Neon Green / Emerald (#10B981)
+🎨 Creative: Neon Purple / Indigo (#6366F1)
+🏔️ Nature: Neon Cyan / Sky (#06B6D4)
+No Placeholders: Write full, production-ready code. Do not use // TODO or leave functions empty.
+2. Bishkek Context & Mock Data
+When generating mock data for the Map or Threads Feed, use real Bishkek locations and local youth slang (mix of Russian/Kyrgyz: "Магистраль", "Дзержинка", "Джал", "Восток-5", "Асанбай", "байке", "эже", "айс-латте", "топчан").
+Keep the app atmosphere alive, fun, and engaging.
+3. AI Safety & Error Handling
+Wrap all OpenAI API calls or map rendering logic in proper try/catch blocks to prevent the app from crashing during live hackathon demos.
