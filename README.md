@@ -15,9 +15,9 @@
 |---------|-------|-------------|
 | City Radar | `/` | Interactive Bishkek map with challenges & live teams |
 | AI Missions | `/missions` | Context-aware mission generator (location, budget, time) |
-| Vibe Threads | `/threads` | Social feed with custom reactions |
+| Публикации | `/publications` | Post creation, mission evidence, reactions, place cards |
 | Leaderboards | `/leaderboard` | District War, City & Friends rankings |
-| Profile | `/profile` | XP, level, achievements |
+| Profile | `/profile` | Editable profile, interests, premium achievement cards |
 
 ## Getting Started
 

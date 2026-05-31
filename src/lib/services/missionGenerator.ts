@@ -14,6 +14,12 @@ interface MissionInput {
   timeMinutes: TimeAvailable;
   category: MissionCategory;
   district?: District;
+  interests?: MissionCategory[];
+}
+
+export function pickCategoryFromInterests(interests: MissionCategory[]): MissionCategory {
+  if (interests.length === 0) return "sport";
+  return interests[Math.floor(Math.random() * interests.length)];
 }
 
 const MISSION_TEMPLATES: Record<

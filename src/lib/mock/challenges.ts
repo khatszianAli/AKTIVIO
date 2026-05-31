@@ -1,4 +1,5 @@
 import type { Challenge, LiveActivity } from "@/lib/types";
+import { MOCK_USERS } from "./users";
 
 export const MOCK_CHALLENGES: Challenge[] = [
   {
@@ -118,34 +119,7 @@ export const MOCK_LIVE_ACTIVITIES: LiveActivity[] = [
     coordinates: { lat: 42.846, lng: 74.597 },
     locationName: "Южная Магистраль",
     district: "leninsky",
-    participants: [
-      {
-        id: "user-005",
-        username: "erlan_skate",
-        displayName: "Erlan",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=erlan",
-        district: "sverdlovsky",
-        level: 2,
-        xp: 1100,
-        xpToNextLevel: 400,
-        totalMissions: 31,
-        streak: 7,
-        isOnline: true,
-      },
-      {
-        id: "user-003",
-        username: "bekzat_run",
-        displayName: "Bekzat",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=bekzat",
-        district: "oktyabrsky",
-        level: 2,
-        xp: 980,
-        xpToNextLevel: 520,
-        totalMissions: 23,
-        streak: 3,
-        isOnline: true,
-      },
-    ],
+    participants: [MOCK_USERS[4], MOCK_USERS[2]],
     maxParticipants: 6,
     startedAt: new Date(Date.now() - 900000).toISOString(),
     xpReward: 80,
@@ -157,21 +131,7 @@ export const MOCK_LIVE_ACTIVITIES: LiveActivity[] = [
     coordinates: { lat: 42.877, lng: 74.589 },
     locationName: "Дубовый парк",
     district: "sverdlovsky",
-    participants: [
-      {
-        id: "user-004",
-        username: "dina_creative",
-        displayName: "Dina",
-        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=dina",
-        district: "leninsky",
-        level: 5,
-        xp: 8900,
-        xpToNextLevel: 3100,
-        totalMissions: 134,
-        streak: 21,
-        isOnline: true,
-      },
-    ],
+    participants: [MOCK_USERS[3]],
     maxParticipants: 4,
     startedAt: new Date(Date.now() - 600000).toISOString(),
     xpReward: 100,

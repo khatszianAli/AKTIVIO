@@ -21,13 +21,16 @@ export interface User {
   id: string;
   username: string;
   displayName: string;
+  bio: string;
   avatar: string;
   district: District;
+  interests: MissionCategory[];
   level: UserLevel;
   xp: number;
   xpToNextLevel: number;
   totalMissions: number;
   streak: number;
+  unlockedAchievements: string[];
   isOnline: boolean;
   lastSeen?: string;
 }
@@ -77,22 +80,33 @@ export interface Mission {
   verificationHint: string;
 }
 
-export type ThreadReaction = "cringe_legend" | "summer_vibe" | "powerful";
+export type PublicationReaction = "cringe_legend" | "summer_vibe" | "powerful";
 
-export interface ThreadPost {
+export type PublicationType = "mission_result" | "place_tip" | "general";
+
+export interface Publication {
   id: string;
   author: User;
   content: string;
   imageUrl?: string;
+  videoUrl?: string;
+  type: PublicationType;
   category?: MissionCategory;
   placeName?: string;
   placeCoordinates?: Coordinates;
-  challengeId?: string;
-  reactions: Record<ThreadReaction, number>;
-  userReaction?: ThreadReaction;
+  missionId?: string;
+  missionTitle?: string;
+  xpEarned?: number;
+  reactions: Record<PublicationReaction, number>;
+  userReaction?: PublicationReaction;
   aiTags: string[];
   createdAt: string;
 }
+
+/** @deprecated Use Publication */
+export type ThreadReaction = PublicationReaction;
+/** @deprecated Use Publication */
+export type ThreadPost = Publication;
 
 export interface DistrictStats {
   district: District;
@@ -124,4 +138,37 @@ export interface LevelInfo {
   minXp: number;
   maxXp: number;
   color: string;
+}
+
+export type AchievementRarity = "common" | "rare" | "epic" | "legendary";
+
+export interface Achievement {
+  id: string;
+  title: string;
+  titleRu: string;
+  description: string;
+  emoji: string;
+  rarity: AchievementRarity;
+  gradient: [string, string];
+  condition: (user: User) => boolean;
+}
+
+export interface ProfileUpdate {
+  displayName?: string;
+  username?: string;
+  bio?: string;
+  avatar?: string;
+}
+
+export interface CreatePublicationInput {
+  content: string;
+  imageUrl?: string;
+  videoUrl?: string;
+  type?: PublicationType;
+  category?: MissionCategory;
+  placeName?: string;
+  placeCoordinates?: Coordinates;
+  missionId?: string;
+  missionTitle?: string;
+  xpEarned?: number;
 }

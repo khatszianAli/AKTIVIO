@@ -1,5 +1,5 @@
-import { ThreadsFeed } from "@/components/threads/ThreadsFeed";
+import { redirect } from "next/navigation";
 
-export default function ThreadsPage() {
-  return <ThreadsFeed />;
+export default function ThreadsRedirect() {
+  redirect("/publications");
 }

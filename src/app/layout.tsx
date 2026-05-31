@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { UserProvider } from "@/providers/UserProvider";
+import { PublicationsProvider } from "@/providers/PublicationsProvider";
 import { AppShell } from "@/components/layout/AppShell";
 import "./globals.css";
 
@@ -38,7 +39,9 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${inter.variable} font-sans`}>
         <UserProvider>
-          <AppShell>{children}</AppShell>
+          <PublicationsProvider>
+            <AppShell>{children}</AppShell>
+          </PublicationsProvider>
         </UserProvider>
       </body>
     </html>

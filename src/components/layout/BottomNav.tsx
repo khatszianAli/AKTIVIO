@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { href: "/", label: "Радар", icon: Map },
   { href: "/missions", label: "Миссии", icon: Zap },
-  { href: "/threads", label: "Threads", icon: MessageCircle },
+  { href: "/publications", label: "Лента", icon: MessageCircle },
   { href: "/leaderboard", label: "Рейтинг", icon: Trophy },
   { href: "/profile", label: "Профиль", icon: User },
 ];
@@ -20,7 +20,8 @@ export function BottomNav() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-800 bg-slate-900/95 backdrop-blur-xl safe-bottom">
       <div className="mx-auto flex max-w-lg items-center justify-around px-2 py-2">
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
-          const isActive = pathname === href;
+          const isActive =
+            pathname === href || (href === "/publications" && pathname === "/threads");
           return (
             <Link
               key={href}
