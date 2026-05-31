@@ -9,9 +9,12 @@ import { NearbyActivities } from "@/components/home/NearbyActivities";
 import { DistrictWarMini } from "@/components/home/DistrictWarMini";
 import { ActivitySheet } from "@/components/map/ActivitySheet";
 import { useMapActivities } from "@/hooks/useMapActivities";
+import { SalkynFloatingButton } from "@/components/ai-assistant/SalkynFloatingButton";
+import { ChatAssistant } from "@/components/ai-assistant/ChatAssistant";
 
 export function HomeDashboard() {
   const [filter, setFilter] = useState<MissionCategory | "all">("all");
+  const [salkynOpen, setSalkynOpen] = useState(false);
   const {
     challenges,
     liveActivities,
@@ -77,6 +80,18 @@ export function HomeDashboard() {
           onClose={handleClose}
         />
       )}
+
+      <SalkynFloatingButton
+        onClick={() => setSalkynOpen((v) => !v)}
+        isOpen={salkynOpen}
+      />
+
+      <ChatAssistant
+        isOpen={salkynOpen}
+        onClose={() => setSalkynOpen(false)}
+        liveChallenges={challenges}
+        liveActivities={liveActivities}
+      />
     </div>
   );
 }

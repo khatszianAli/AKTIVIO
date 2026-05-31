@@ -15,6 +15,7 @@
 |---------|-------|-------------|
 | City Radar | `/` | Interactive Bishkek map with challenges & live teams |
 | AI Missions | `/missions` | Context-aware mission generator (location, budget, time) |
+| AI Assistant | `/` (Radar) | Салkyn context advisor — chat overlay on home map |
 | Публикации | `/publications` | Post creation, mission evidence, reactions, place cards |
 | Leaderboards | `/leaderboard` | District War, City & Friends rankings |
 | Profile | `/profile` | Editable profile, interests, premium achievement cards |

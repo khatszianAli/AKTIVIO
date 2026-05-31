@@ -34,6 +34,19 @@ export const MOCK_PUBLICATIONS: Publication[] = [
     createdAt: new Date(Date.now() - 3600000).toISOString(),
   },
   {
+    id: "pub-005",
+    author: MOCK_USERS[2],
+    content:
+      "Асанбай, летник у Globus — реально прохладно, кондиционер работает, мест много. Сейчас полупусто, летний вайб 🔥",
+    type: "place_tip",
+    category: "social",
+    placeName: "Асанбай",
+    placeCoordinates: { lat: 42.823, lng: 74.628 },
+    reactions: { cringe_legend: 2, summer_vibe: 38, powerful: 11 },
+    aiTags: ["#asanbay", "#summer", "#cool", "#coffee"],
+    createdAt: new Date(Date.now() - 1200000).toISOString(),
+  },
+  {
     id: "pub-003",
     author: MOCK_USERS[3],
     content:

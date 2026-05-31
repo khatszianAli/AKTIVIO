@@ -95,7 +95,7 @@ export const MOCK_CHALLENGES: Challenge[] = [
     id: "ch-006",
     title: "Джал Food Hunt",
     description:
-      "Попробуй лучшую шаурму на Джале (до 200 KGS), сфоткай и оцени по шкале от 1 до 10 в Threads",
+      "Попробуй лучшую шаурму на Джале (до 200 KGS), сфоткай и оцени по шкале от 1 до 10 в Публикациях",
     category: "social",
     xpReward: 90,
     coordinates: { lat: 42.865, lng: 74.615 },
@@ -108,6 +108,24 @@ export const MOCK_CHALLENGES: Challenge[] = [
     isLive: true,
     expiresAt: new Date(Date.now() + 4500000).toISOString(),
     hostId: "user-002",
+  },
+  {
+    id: "ch-007",
+    title: "Баскет на площадке — 7-й микро",
+    description:
+      "Сбор на street-basket во дворе 7-го микро. 3 на 3, приходи как есть — мяч есть. До 500 KGS если захочешь лимонад после",
+    category: "sport",
+    xpReward: 110,
+    coordinates: { lat: 42.836, lng: 74.601 },
+    locationName: "7-й микрорайон",
+    district: "oktyabrsky",
+    budget: "free",
+    timeMinutes: 60,
+    participants: 5,
+    maxParticipants: 10,
+    isLive: true,
+    expiresAt: new Date(Date.now() + 5400000).toISOString(),
+    hostId: "user-005",
   },
 ];
 

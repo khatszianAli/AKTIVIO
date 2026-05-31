@@ -172,3 +172,25 @@ export interface CreatePublicationInput {
   missionTitle?: string;
   xpEarned?: number;
 }
+
+export type ChatRole = "user" | "assistant";
+
+export interface ChatMessage {
+  id: string;
+  role: ChatRole;
+  content: string;
+  createdAt: string;
+}
+
+export interface AdvisorContext {
+  user: User;
+  recentPublications: Publication[];
+  liveChallenges: Challenge[];
+  liveActivities: LiveActivity[];
+}
+
+export interface AdvisorResponse {
+  reply: string;
+  systemPrompt: string;
+  suggestedActions?: string[];
+}
